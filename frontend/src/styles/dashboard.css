@@ -1,0 +1,44 @@
+/* ستايلات الأدمن: صندوق الدخول، كروت الإحصائيات، جدول العملاء، التنقل بين الصفحات والنافذة المنبثقة */
+.login { max-width: 380px; margin: 64px auto; background: var(--surf); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: grid; gap: 14px; }
+.login h2 { margin: 0; }
+.login .back { font-size: 14px; color: var(--mut); }
+
+.bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 22px 0 14px; }
+.bar h2 { margin: 0; font-size: 26px; flex: 1; }
+.stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); margin-bottom: 18px; }
+.stat { background: var(--surf); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stat b { display: block; font: 400 28px "BBH Bogle", sans-serif; }
+.stat span { font-size: 13px; color: var(--mut); }
+.tools { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.tools input { flex: 2 1 220px; }
+.tools select { flex: 1 1 150px; }
+
+.tw { overflow-x: auto; background: var(--surf); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { background: var(--brand2); font-size: 13px; font-weight: 400; }
+tr:last-child td { border-bottom: 0; }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 12px; background: var(--brand2); border: 1px solid var(--line); }
+.pill.s-Won { color: var(--ok); border-color: var(--ok); }
+.pill.s-Lost { color: var(--bad); border-color: var(--bad); }
+.pill.s-New { color: var(--brand); border-color: var(--brand); }
+.acts { display: flex; gap: 5px; }
+.empty { padding: 30px; text-align: center; color: var(--mut); white-space: normal; }
+.pg { display: flex; gap: 6px; align-items: center; justify-content: flex-end; margin-top: 12px; font-size: 14px; color: var(--mut); flex-wrap: wrap; }
+
+.modal { position: fixed; inset: 0; background: rgba(0, 0, 0, .55); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 20; }
+.modal[hidden] { display: none; }
+.box { background: var(--surf); border-radius: 12px; padding: 22px; max-width: 560px; width: 100%; max-height: 90vh; overflow: auto; border: 1px solid var(--line); }
+.box h3 { font-size: 22px; }
+.box .two { grid-template-columns: 1fr 1fr; }
+.box .gap { margin-top: 10px; }
+dl { display: grid; grid-template-columns: 110px 1fr; gap: 6px 12px; margin: 0 0 14px; font-size: 14px; }
+dt { color: var(--mut); }
+dd { margin: 0; overflow-wrap: anywhere; }
+.cts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+@media (max-width: 700px) { .box .two { grid-template-columns: 1fr; } }
+
+/* ماركاب React: كل زوج <dt>/<dd> متغلّف في .row، فبنرتّب الصفوف بدل القائمة */
+dl { display: block; }
+dl .row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; margin-bottom: 6px; }
